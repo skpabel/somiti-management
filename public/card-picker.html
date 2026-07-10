@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Notification Card Style Picker</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { background: #f1f5f9; font-family: 'Segoe UI', sans-serif; }
+  .card-wrap { cursor: pointer; transition: all .2s; }
+  .card-wrap:hover { transform: translateY(-3px); }
+  .card-wrap.selected { outline: 3px solid #10b981; outline-offset: 4px; border-radius: 20px; }
+  .badge-selected { display: none; }
+  .card-wrap.selected .badge-selected { display: flex; }
+</style>
+</head>
+<body class="p-6">
+
+<div class="max-w-5xl mx-auto">
+
+  <!-- Header -->
+  <div class="mb-8 text-center">
+    <h1 class="text-2xl font-extrabold text-slate-800">🎨 Notification Card Style Picker</h1>
+    <p class="text-slate-500 mt-1 text-sm">একটা style এ click করো, তারপর "Select This Style" বাটন চাপো</p>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="styleGrid">
+
+    <!-- ===== STYLE 1 ===== -->
+    <div class="card-wrap" onclick="select(this, 1)">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <!-- Label -->
+        <div class="px-4 pt-3 pb-2 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Style 1 — Clean White</span>
+          <span class="badge-selected items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ Selected</span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          <!-- card -->
+          <div class="bg-white border border-gray-100 rounded-xl px-3 py-3 flex items-center gap-3 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-gray-900">জুলাই মাস unpaid</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">৳১,৫০০ বকেয়া আছে</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-gray-400">2 min ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-xl px-3 py-3 flex items-center gap-3 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7.75A3.25 3.25 0 017.25 4.5h9.5A3.25 3.25 0 0120 7.75v1.1H7.2a1.55 1.55 0 100 3.1H20v4.3a3.25 3.25 0 01-3.25 3.25h-9.5A3.25 3.25 0 014 16.25v-8.5z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-gray-900">Active Loan</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">Remaining: ৳৫০,০০০</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-gray-400">1 hour ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STYLE 2 ===== -->
+    <div class="card-wrap" onclick="select(this, 2)">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="px-4 pt-3 pb-2 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Style 2 — Left Border</span>
+          <span class="badge-selected items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ Selected</span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          <div class="bg-white border-l-4 border-orange-400 rounded-xl px-3 py-3 flex items-center gap-3 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-gray-900">জুলাই মাস unpaid</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">৳১,৫০০ বকেয়া আছে</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-gray-400">2 min ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+          </div>
+          <div class="bg-white border-l-4 border-red-400 rounded-xl px-3 py-3 flex items-center gap-3 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7.75A3.25 3.25 0 017.25 4.5h9.5A3.25 3.25 0 0120 7.75v1.1H7.2a1.55 1.55 0 100 3.1H20v4.3a3.25 3.25 0 01-3.25 3.25h-9.5A3.25 3.25 0 014 16.25v-8.5z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-gray-900">Active Loan</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">Remaining: ৳৫০,০০০</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-gray-400">1 hour ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STYLE 3 ===== -->
+    <div class="card-wrap" onclick="select(this, 3)">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="px-4 pt-3 pb-2 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Style 3 — Colored BG</span>
+          <span class="badge-selected items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ Selected</span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          <div class="bg-orange-50 border border-orange-100 rounded-xl px-3 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-orange-800">জুলাই মাস unpaid</p>
+              <p class="text-[11px] text-orange-400 mt-0.5">৳১,৫০০ বকেয়া আছে</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-orange-300">2 min ago</span>
+              <span class="w-2 h-2 rounded-full bg-orange-400"></span>
+            </div>
+          </div>
+          <div class="bg-red-50 border border-red-100 rounded-xl px-3 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7.75A3.25 3.25 0 017.25 4.5h9.5A3.25 3.25 0 0120 7.75v1.1H7.2a1.55 1.55 0 100 3.1H20v4.3a3.25 3.25 0 01-3.25 3.25h-9.5A3.25 3.25 0 014 16.25v-8.5z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-red-800">Active Loan</p>
+              <p class="text-[11px] text-red-400 mt-0.5">Remaining: ৳৫০,০০০</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-red-300">1 hour ago</span>
+              <span class="w-2 h-2 rounded-full bg-red-400"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STYLE 4 ===== -->
+    <div class="card-wrap" onclick="select(this, 4)">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="px-4 pt-3 pb-2 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Style 4 — Gradient Icon</span>
+          <span class="badge-selected items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ Selected</span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          <div class="bg-white border border-gray-100 rounded-xl px-3 py-3 flex items-center gap-3 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-gray-900">জুলাই মাস unpaid</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">৳১,৫০০ বকেয়া আছে</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-gray-400">2 min ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-100 rounded-xl px-3 py-3 flex items-center gap-3 shadow-sm">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-red-400 to-rose-500 flex items-center justify-center flex-shrink-0 shadow-sm">
+              <svg class="h-5 w-5 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7.75A3.25 3.25 0 017.25 4.5h9.5A3.25 3.25 0 0120 7.75v1.1H7.2a1.55 1.55 0 100 3.1H20v4.3a3.25 3.25 0 01-3.25 3.25h-9.5A3.25 3.25 0 014 16.25v-8.5z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-gray-900">Active Loan</p>
+              <p class="text-[11px] text-gray-400 mt-0.5">Remaining: ৳৫০,০০০</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-gray-400">1 hour ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STYLE 5 ===== -->
+    <div class="card-wrap" onclick="select(this, 5)">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="px-4 pt-3 pb-2 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Style 5 — Dark Card</span>
+          <span class="badge-selected items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ Selected</span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          <div class="bg-slate-800 rounded-xl px-3 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-white">জুলাই মাস unpaid</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">৳১,৫০০ বকেয়া আছে</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-slate-500">2 min ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            </div>
+          </div>
+          <div class="bg-slate-800 rounded-xl px-3 py-3 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center flex-shrink-0">
+              <svg class="h-5 w-5 text-red-400" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7.75A3.25 3.25 0 017.25 4.5h9.5A3.25 3.25 0 0120 7.75v1.1H7.2a1.55 1.55 0 100 3.1H20v4.3a3.25 3.25 0 01-3.25 3.25h-9.5A3.25 3.25 0 014 16.25v-8.5z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="text-[13px] font-bold text-white">Active Loan</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">Remaining: ৳৫০,০০০</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5">
+              <span class="text-[10px] text-slate-500">1 hour ago</span>
+              <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== STYLE 6 ===== -->
+    <div class="card-wrap" onclick="select(this, 6)">
+      <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div class="px-4 pt-3 pb-2 flex items-center justify-between">
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Style 6 — Top Strip</span>
+          <span class="badge-selected items-center gap-1 text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">✓ Selected</span>
+        </div>
+        <div class="px-4 pb-4 space-y-2">
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="h-1 bg-gradient-to-r from-orange-400 to-amber-400"></div>
+            <div class="px-3 py-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center flex-shrink-0">
+                <svg class="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-bold text-gray-900">জুলাই মাস unpaid</p>
+                <p class="text-[11px] text-gray-400 mt-0.5">৳১,৫০০ বকেয়া আছে</p>
+              </div>
+              <div class="flex flex-col items-end gap-1.5">
+                <span class="text-[10px] text-gray-400">2 min ago</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="h-1 bg-gradient-to-r from-red-400 to-rose-400"></div>
+            <div class="px-3 py-3 flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center flex-shrink-0">
+                <svg class="h-5 w-5 text-red-500" viewBox="0 0 24 24" fill="currentColor"><path d="M4 7.75A3.25 3.25 0 017.25 4.5h9.5A3.25 3.25 0 0120 7.75v1.1H7.2a1.55 1.55 0 100 3.1H20v4.3a3.25 3.25 0 01-3.25 3.25h-9.5A3.25 3.25 0 014 16.25v-8.5z"/></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <p class="text-[13px] font-bold text-gray-900">Active Loan</p>
+                <p class="text-[11px] text-gray-400 mt-0.5">Remaining: ৳৫০,০০০</p>
+              </div>
+              <div class="flex flex-col items-end gap-1.5">
+                <span class="text-[10px] text-gray-400">1 hour ago</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Select Button -->
+  <div class="mt-8 text-center" id="selectBtn" style="display:none;">
+    <div class="inline-flex items-center gap-3 bg-emerald-600 text-white px-8 py-3.5 rounded-2xl shadow-lg text-[15px] font-bold">
+      ✅ Style <span id="selectedNum"></span> selected — বলো implement করি!
+    </div>
+  </div>
+
+</div>
+
+<script>
+  let current = null;
+  function select(el, num) {
+    if (current) current.classList.remove('selected');
+    el.classList.add('selected');
+    current = el;
+    document.getElementById('selectedNum').textContent = num;
+    document.getElementById('selectBtn').style.display = 'block';
+  }
+</script>
+</body>
+</html>
