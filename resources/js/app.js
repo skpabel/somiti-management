@@ -1,0 +1,1 @@
+// Livewire v3 automatically handles Alpine.js
