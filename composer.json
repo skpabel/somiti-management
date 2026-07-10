@@ -39,12 +39,15 @@
     },
     "scripts": {
         "pre-install-cmd": [
-            "mkdir -p bootstrap/cache",
-            "chmod -R 775 bootstrap/cache || true"
+            "mkdir -p bootstrap/cache storage/framework/sessions storage/framework/views storage/framework/cache storage/logs",
+            "chmod -R 775 bootstrap/cache storage || true"
         ],
         "post-install-cmd": [
-            "chmod -R 775 bootstrap/cache || true",
-            "php artisan package:discover --ansi || true"
+            "chmod -R 775 bootstrap/cache storage || true"
+        ],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi || true"
         ],
         "setup": [
             "composer install",
@@ -61,10 +64,6 @@
         "test": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
-        ],
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
