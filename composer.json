@@ -38,6 +38,14 @@
         }
     },
     "scripts": {
+        "pre-install-cmd": [
+            "mkdir -p bootstrap/cache",
+            "chmod -R 775 bootstrap/cache || true"
+        ],
+        "post-install-cmd": [
+            "chmod -R 775 bootstrap/cache || true",
+            "php artisan package:discover --ansi || true"
+        ],
         "setup": [
             "composer install",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
